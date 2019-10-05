@@ -1,4 +1,10 @@
 
-public class LetterAvg {
+public class LetterAvg extends MesoInherit
+{
+
+	public LetterAvg(String stId) 
+	{
+		super(stId);
+	}
 
 }
