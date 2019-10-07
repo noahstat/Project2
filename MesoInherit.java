@@ -73,4 +73,9 @@ public class MesoInherit extends MesoStation
 		}
 	}
 	
+	public char letterAverage()
+	{
+		return letterAverage();
+	}
+	
 }
