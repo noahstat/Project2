@@ -1,10 +1,13 @@
 
 public class LetterAvg extends MesoInherit
 {
-
-	public LetterAvg(String stId) 
+	private char key;
+	
+	public LetterAvg(char c) 
 	{
-		super(stId);
+		
+		super("c");
+		this.key = c;
 	}
 
 	public char letterAverage()

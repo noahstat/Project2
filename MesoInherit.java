@@ -13,6 +13,11 @@ public class MesoInherit extends MesoStation
 		super(stId);
 	}
 	
+	public MesoInherit(MesoStation mesoStation) 
+	{
+		super(mesoStation.getStID());
+	}
+
 	public static void readIn() throws IOException {
 		//try to read in the file with a scanner
 		try {
@@ -75,13 +80,14 @@ public class MesoInherit extends MesoStation
 	
 	public int[] calAverage()
 	{
-		return calAverage();
+		LetterAvg j = new LetterAvg(super.getStID().charAt(0));
+		return j.calAverage();
 	}
 	
 	public char letterAverage()
 	{
-		LetterAvg j = new LetterAvg(super.getStID());
-		return letterAverage();
+		LetterAvg j = new LetterAvg(super.getStID().charAt(0));
+		return j.letterAverage();
 	}
 	
 	public int numberOfStationWithLetterAvg()
