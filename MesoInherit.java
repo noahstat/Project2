@@ -108,7 +108,7 @@ public class MesoInherit extends MesoStation
 	
 	public int[] calAverage()
 	{
-		LetterAvg j = new LetterAvg(super.getStID().charAt(0));
+		LetterAvg j = new LetterAvg(super.getStID());
 		return j.calAverage();
 	}
 	

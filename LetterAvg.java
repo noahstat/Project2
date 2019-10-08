@@ -5,10 +5,16 @@ public class LetterAvg extends MesoInherit
 	
 	public LetterAvg(char c) 
 	{
-		
 		super("c");
 		this.key = c;
 	}
+
+	public LetterAvg(String stID) 
+	{
+		super(stID);
+	}
+
+
 
 	public char letterAverage()
 	{
@@ -19,12 +25,16 @@ public class LetterAvg extends MesoInherit
 		int round = 0;
 		double sum = 0.0;
 		
+		
 		for(int i = 0; i < 4; ++i)
 		{
 			char c = stID.charAt(i);
 			sum += Character.getNumericValue(c);
 			
 		}
+		
+		//actually take the average
+		sum = sum / 4;
 		
 		ceil = (int)Math.ceil(sum);
 //		System.out.println("Ascii Ceiling is " + ceil);
@@ -45,10 +55,11 @@ public class LetterAvg extends MesoInherit
 		int floor = 0;
 		int round = 0;
 		double sum = 0.0;
+		char c = ' ';
 		
 		for(int i = 0; i < 4; ++i)
 		{
-			char c = stID.charAt(i);
+			c = stID.charAt(i);
 			sum += Character.getNumericValue(c);
 			
 		}

@@ -51,7 +51,7 @@ public class PosAvg extends MesoInherit
 		else
 		{
 			//i is where we are getting the info and k is where we're storing the info both are there for simplicity
-			for(int i = index - 2, k = 0; i < index + 4;++i, ++k)
+			for(int i = index - 2, k = 0; i < index + 2;++i, ++k)
 			{
 				aves[k] = stations[i];
 			}
