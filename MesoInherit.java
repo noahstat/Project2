@@ -73,9 +73,30 @@ public class MesoInherit extends MesoStation
 		}
 	}
 	
+	public int[] calAverage()
+	{
+		return calAverage();
+	}
+	
 	public char letterAverage()
 	{
+		LetterAvg j = new LetterAvg(super.getStID());
 		return letterAverage();
 	}
 	
+	public int numberOfStationWithLetterAvg()
+	{
+		char key = letterAverage();
+		int numberOfStationWithLetterAvg = 0;
+		
+		for(int i = 0; i < size; ++i)
+		{
+			if(stations[i].charAt(0) == key)
+			{
+				++numberOfStationWithLetterAvg;
+			}
+		}
+		
+		return numberOfStationWithLetterAvg;
+	}
 }
