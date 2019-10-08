@@ -15,7 +15,7 @@ public class PosAvg extends MesoInherit
 		super(ID);
 			
 		//find the index of the element for other calculations
-		this.index = Arrays.binarySearch(MesoInherit.stations, 0, MesoInherit.size, ID);
+		this.index = Arrays.binarySearch(MesoInherit.stations, 0, MesoInherit.size, ID);//in stations from 0 to size searching for ID
 		
 	}
 	
@@ -30,6 +30,7 @@ public class PosAvg extends MesoInherit
 		//output should look like:
 		//This index is average of NOWA and OILT, NEWP and OKCE, and so on.
 		
+		//holds the four stations around it
 		String[] out = getAverages();
 		
 		String string = "This index is average of " + out[0] + " and " + out[1] + ", " 
@@ -45,7 +46,7 @@ public class PosAvg extends MesoInherit
 		
 		if(index < 2 || index > (size - 2))
 		{
-			return null;
+			return aves;
 		}
 		else
 		{
@@ -55,6 +56,7 @@ public class PosAvg extends MesoInherit
 				aves[k] = stations[i];
 			}
 			return aves;
+			
 		}
 	}
 	
