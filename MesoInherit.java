@@ -5,12 +5,20 @@ import java.util.Scanner;
 
 public class MesoInherit extends MesoStation
 {
-	protected static String[] stations = {"BYOB", "BOIS"};
+	protected static String[] stations = {"BYOB", "BOIS", "ITSA", "MEEE"};
 	protected static int size = 0;
 	
 	public MesoInherit(String stId) 
 	{
+		//make the object
 		super(stId);
+		
+		//try to read in so we have that data, there will be an array for every MesoInherit object
+		try {
+			readIn();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public MesoInherit(MesoStation mesoStation) 
@@ -18,10 +26,10 @@ public class MesoInherit extends MesoStation
 		super(mesoStation.getStID());
 	}
 
-	public static void readIn() throws IOException {
+	protected static void readIn() throws IOException {
 		//try to read in the file with a scanner
 		try {
-			String str = "Mesonet";
+			String str = "Mesonet.txt";
 			File file = new File(str);
 			Scanner in = new Scanner(file);
 
@@ -40,6 +48,12 @@ public class MesoInherit extends MesoStation
 				hasInt = false;
 				string1 = in.next();//.next so that only one grouping is read in at a time
 				string2 = in.next();
+				
+				//if there is not room for the next two items read in
+				if(size + 2 >= stations.length)
+				{
+					expand();
+				}
 
 				for (Integer i = 0; i < 10; ++i) {
 					// find out if the string has a number in it
@@ -48,7 +62,7 @@ public class MesoInherit extends MesoStation
 					}
 				}
 
-				// if there was no int in the first string try the second
+				// if there was no int in the first string add it and try the second
 				if (hasInt == false) {
 					stations[size] = string1;
 					++size;
@@ -76,6 +90,20 @@ public class MesoInherit extends MesoStation
 		catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private static void expand()
+	{
+		int newSize = size + 20;
+		String[] replacement = new String[newSize];
+		
+		//for the length of the stations, all extra spots will be null
+		for(int i = 0; i < stations.length; ++i)
+		{
+			replacement[i] = stations[i];
+		}
+		
+		stations = replacement;
 	}
 	
 	public int[] calAverage()
