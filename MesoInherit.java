@@ -14,7 +14,11 @@ public class MesoInherit extends MesoStation
 		super(stId);
 		
 		//try to read in so we have that data, there will be an array for every MesoInherit object
-		
+		try {
+			MesoInherit.readIn();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public MesoInherit(MesoStation mesoStation) 
@@ -24,7 +28,13 @@ public class MesoInherit extends MesoStation
 
 	protected static void readIn() throws IOException {
 		//try to read in the file with a scanner
+		
 		try {
+			//reset the array so there are no duplicates
+			String[] clearArray = {"BYOB", "BOIS", "ITSA", "MEEE"};
+			stations = clearArray;
+			size = 0;
+			
 			String str = "Mesonet.txt";
 			File file = new File(str);
 			Scanner in = new Scanner(file);
