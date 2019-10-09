@@ -14,11 +14,7 @@ public class MesoInherit extends MesoStation
 		super(stId);
 		
 		//try to read in so we have that data, there will be an array for every MesoInherit object
-		try {
-			readIn();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 	}
 	
 	public MesoInherit(MesoStation mesoStation) 
@@ -90,6 +86,11 @@ public class MesoInherit extends MesoStation
 		catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		
+//		for(int i = 0; i < stations.length; ++i)
+//		{
+//			System.out.println((i + 1) + ". " + stations[i]);
+//		}
 	}
 	
 	private static void expand()
