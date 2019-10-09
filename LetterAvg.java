@@ -3,6 +3,8 @@ public class LetterAvg extends MesoInherit
 {
 	private char key;
 	protected static String stId = getStID();
+	protected char letterAvg = ' ';
+	protected int numberOfStations = -1;
 	
 	public LetterAvg(char c) 
 	{
@@ -43,9 +45,9 @@ public class LetterAvg extends MesoInherit
 //		System.out.println("Ascii Floor is " + floor);
 		round = (int)Math.round(sum);
 //		System.out.println("Ascii Average is " + round);
-		char out = (char)sum;
+		letterAvg = (char)sum;
 		
-		return out;
+		return letterAvg;
 		
 	}
 	
@@ -95,7 +97,23 @@ public class LetterAvg extends MesoInherit
 			}
 		}
 		
+		numberOfStations = numberOfStationWithLetterAvg;
 		return numberOfStationWithLetterAvg;
 	}
 
+	public String toString()
+	{
+		String output = "";
+		
+		for(int i = 0; i < stations.length; ++i)
+		{
+			if(stations[i].charAt(0) == letterAvg)
+			{
+				output = output + stations[i] + "/n";
+			}
+		}
+		
+		return output;
+	}
+	
 }
