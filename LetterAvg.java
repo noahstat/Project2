@@ -2,13 +2,13 @@
 public class LetterAvg extends MesoInherit
 {
 	private char key;
-	protected static String stId = getStID();
+//	protected static String stId = getStID();
 	protected char letterAvg = ' ';
 	protected int numberOfStations = -1;
 	
 	public LetterAvg(char c) 
 	{
-		super(stId);
+		super("PLEA");
 		this.key = c;
 	}
 
@@ -149,8 +149,18 @@ public class LetterAvg extends MesoInherit
 			
 			if(charAt == key)
 				{
-					output = output + stations[i] + "\n";
-					++currNumber;
+					if(currNumber == numberOfStations - 1)
+					{
+						String toBeAdded = stations[i];
+						output = output + toBeAdded;
+						++currNumber;
+					}
+					else
+					{
+						String toBeAdded = stations[i] + "\n";
+						output = output + toBeAdded;
+						++currNumber;
+					}
 				}
 			
 			++i;
