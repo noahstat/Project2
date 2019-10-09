@@ -45,7 +45,7 @@ public class LetterAvg extends MesoInherit
 //		System.out.println("Ascii Floor is " + floor);
 		round = (int)Math.round(sum);
 //		System.out.println("Ascii Average is " + round);
-		letterAvg = (char)sum;
+		letterAvg = (char)round;
 		
 		return letterAvg;
 		
@@ -86,12 +86,17 @@ public class LetterAvg extends MesoInherit
 	
 	public int numberOfStationWithLetterAvg()
 	{
-		char key = letterAverage();
 		int numberOfStationWithLetterAvg = 0;
+		String toBeSearched = "";
 		
 		for(int i = 0; i < size; ++i)
 		{
-			if(stations[i].charAt(0) == key)
+			toBeSearched = stations[i];
+			if(toBeSearched.equals(null))
+			{
+				break;
+			}
+			else if(toBeSearched.charAt(0) == key)
 			{
 				++numberOfStationWithLetterAvg;
 			}
@@ -101,16 +106,54 @@ public class LetterAvg extends MesoInherit
 		return numberOfStationWithLetterAvg;
 	}
 
+//	public String toString()
+//	{
+//		String toBeSearched = "";
+//		String output = "\nThey are:\n";
+//		char charAt = ' ';
+//		
+//		for(int i = 0; i < stations.length; ++i)
+//		{
+//			toBeSearched = stations[i];
+//			if(!(toBeSearched.isEmpty()))
+//			{
+//				charAt = toBeSearched.charAt(0);
+//			}
+//			else
+//			{
+//				break;
+//			}
+//			
+//			
+////			if((Character.toString(charAt)).equals((Character.toString(key))))
+//			if(charAt == key)
+//			{
+//				output = output + stations[i] + "/n";
+//			}
+//		}
+//		
+//		return output;
+//	}
+	
 	public String toString()
 	{
-		String output = "";
+		String output ="\nThey are:\n";
+		int currNumber = 0;
+		char charAt = 'L';
+		int i = 0;
 		
-		for(int i = 0; i < stations.length; ++i)
+		while(currNumber < numberOfStations)
 		{
-			if(stations[i].charAt(0) == letterAvg)
-			{
-				output = output + stations[i] + "/n";
-			}
+			
+			charAt = stations[i].charAt(0);
+			
+			if(charAt == key)
+				{
+					output = output + stations[i] + "\n";
+					++currNumber;
+				}
+			
+			++i;
 		}
 		
 		return output;
