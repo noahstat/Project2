@@ -118,19 +118,4 @@ public class MesoInherit extends MesoStation
 		return j.letterAverage();
 	}
 	
-	public int numberOfStationWithLetterAvg()
-	{
-		char key = letterAverage();
-		int numberOfStationWithLetterAvg = 0;
-		
-		for(int i = 0; i < size; ++i)
-		{
-			if(stations[i].charAt(0) == key)
-			{
-				++numberOfStationWithLetterAvg;
-			}
-		}
-		
-		return numberOfStationWithLetterAvg;
-	}
 }
