@@ -2,10 +2,11 @@
 public class LetterAvg extends MesoInherit
 {
 	private char key;
+	protected static String stId = getStID();
 	
 	public LetterAvg(char c) 
 	{
-		super("c");
+		super(stId);
 		this.key = c;
 	}
 
@@ -24,12 +25,12 @@ public class LetterAvg extends MesoInherit
 		int floor = 0;
 		int round = 0;
 		double sum = 0.0;
-		
+		char c = ' ';
 		
 		for(int i = 0; i < 4; ++i)
 		{
-			char c = stID.charAt(i);
-			sum += Character.getNumericValue(c);
+			c = stID.charAt(i);
+			sum += (int)c;
 			
 		}
 		
@@ -42,8 +43,9 @@ public class LetterAvg extends MesoInherit
 //		System.out.println("Ascii Floor is " + floor);
 		round = (int)Math.round(sum);
 //		System.out.println("Ascii Average is " + round);
+		char out = (char)sum;
 		
-		return 'O';
+		return out;
 		
 	}
 	
@@ -60,13 +62,11 @@ public class LetterAvg extends MesoInherit
 		for(int i = 0; i < 4; ++i)
 		{
 			c = stID.charAt(i);
-			sum += Character.getNumericValue(c);
+			sum +=  (int)c;
 			
 		}
 		
-		/*Ascii Ceiling is 79
-		Ascii Floor is 78
-		Ascii Average is 79*/
+		sum = sum / 4;
 		
 		ceil = (int)Math.ceil(sum);
 //		System.out.println("Ascii Ceiling is " + ceil);
@@ -74,13 +74,28 @@ public class LetterAvg extends MesoInherit
 //		System.out.println("Ascii Floor is " + floor);
 		round = (int)Math.round(sum);
 //		System.out.println("Ascii Average is " + round);
-		int[] calculated = {ceil, floor, round};
 		
-		/*You have to get the ASCII value for N R M and N as 78, 82, 77, and 78. Sum of these ASCII value is 315. Dividing
-		315 by 4, we get 78.75*/
+		//fill the array to be returned
+		int[] calculated = {ceil, floor, round};
 		
 		return calculated;
 		
+	}
+	
+	public int numberOfStationWithLetterAvg()
+	{
+		char key = letterAverage();
+		int numberOfStationWithLetterAvg = 0;
+		
+		for(int i = 0; i < size; ++i)
+		{
+			if(stations[i].charAt(0) == key)
+			{
+				++numberOfStationWithLetterAvg;
+			}
+		}
+		
+		return numberOfStationWithLetterAvg;
 	}
 
 }
