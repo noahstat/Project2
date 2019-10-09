@@ -8,6 +8,12 @@ public class Driver
 {
 	public static void main(String[] args) throws IOException 
 	{
+		try {
+			MesoInherit.readIn();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		String stID = "NRMN";
 		MesoInherit mesoInherit = new MesoInherit(new MesoStation(stID));
 		
