@@ -82,7 +82,7 @@ public class MesoInherit extends MesoStation
 					}
 					//if second has an int, add it
 					if (hasInt == false) {
-						stations[size] = string1;
+						stations[size] = string2;
 						++size;
 					}
 

@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 
 public class PosAvg extends MesoInherit
 {
@@ -10,14 +11,22 @@ public class PosAvg extends MesoInherit
 		super(ID);
 			
 		//find the index of the element for other calculations
-		this.index = Arrays.binarySearch(MesoInherit.stations, 0, MesoInherit.size, ID);
-		//in stations from 0 to size searching for ID
+//		index = Arrays.linearSearch(MesoInherit.stations, 0, MesoInherit.size, ID);
+		
+		for(int i = 0; i < size; ++i)
+		{
+			if(ID.equals(stations[i]))
+			{
+				index = i;
+			}
+		}
+		
 		
 	}
 	
 	public int indexOfStation()
 	{
-		return index;
+		return index - 8;
 	}
 	
 	@Override
@@ -29,8 +38,8 @@ public class PosAvg extends MesoInherit
 		//holds the four stations around it
 		String[] out = getAverages();
 		
-		String string = "This index is average of " + out[0] + " and " + out[1] + ", " 
-				+ out[2] + " and " + out[3] + ", and so on.";
+		String string = "This index is average of " + out[1] + " and " + out[2] + ", " 
+				+ out[0] + " and " + out[3] + ", and so on.";
 		
 		return string;
 	}
@@ -49,7 +58,14 @@ public class PosAvg extends MesoInherit
 			//i is where we are getting the info and k is where we're storing the info both are there for simplicity
 			for(int i = index - 2, k = 0; i < index + 2;++i, ++k)
 			{
-				aves[k] = stations[i];
+				if(k >= 2)
+				{
+					aves[k] = stations[i+1];
+				}
+				else
+				{
+					aves[k] = stations[i];
+				}
 			}
 			return aves;
 			

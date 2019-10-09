@@ -6,7 +6,7 @@ import java.io.IOException;
 */
 public class MesoStation 
 {
-	private static String stID;
+	private String stID;
 	
 	public MesoStation(String stId)
 	{
@@ -14,7 +14,7 @@ public class MesoStation
 		
 	}
 
-	public static String getStID() {
+	public String getStID() {
 		return stID;
 	}
 }
