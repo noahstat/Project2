@@ -4,14 +4,14 @@
 */
 public class MesoStation 
 {
-	private String stID;
+	private static String stID;
 	
 	public MesoStation(String stId)
 	{
 		this.stID = stId;
 	}
 
-	public String getStID() {
+	public static String getStID() {
 		return stID;
 	}
 }
