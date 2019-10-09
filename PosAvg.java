@@ -15,7 +15,8 @@ public class PosAvg extends MesoInherit
 		super(ID);
 			
 		//find the index of the element for other calculations
-		this.index = Arrays.binarySearch(MesoInherit.stations, 0, MesoInherit.size, ID);//in stations from 0 to size searching for ID
+		this.index = Arrays.binarySearch(MesoInherit.stations, 0, MesoInherit.size, ID);
+		//in stations from 0 to size searching for ID
 		
 	}
 	
