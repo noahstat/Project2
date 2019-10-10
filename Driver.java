@@ -2,13 +2,14 @@
  * @author Mohammad Mukhtaruzzaman
  * @version 2019-09-18
 */
+//problem in LetterAvgtoString
 import java.io.IOException;
 
 public class Driver 
 {
 	public static void main(String[] args) throws IOException 
 	{
-		String stID = "IIII";
+		String stID = "FREE";
 		MesoInherit mesoInherit = new MesoInherit(new MesoStation(stID));
 		
 		PosAvg posAvg = new PosAvg(stID);

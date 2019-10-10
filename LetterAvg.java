@@ -1,4 +1,4 @@
-
+//problem here
 public class LetterAvg extends MesoInherit
 {
 	private char key;
@@ -105,41 +105,13 @@ public class LetterAvg extends MesoInherit
 		numberOfStations = numberOfStationWithLetterAvg;
 		return numberOfStationWithLetterAvg;
 	}
-
-//	public String toString()
-//	{
-//		String toBeSearched = "";
-//		String output = "\nThey are:\n";
-//		char charAt = ' ';
-//		
-//		for(int i = 0; i < stations.length; ++i)
-//		{
-//			toBeSearched = stations[i];
-//			if(!(toBeSearched.isEmpty()))
-//			{
-//				charAt = toBeSearched.charAt(0);
-//			}
-//			else
-//			{
-//				break;
-//			}
-//			
-//			
-////			if((Character.toString(charAt)).equals((Character.toString(key))))
-//			if(charAt == key)
-//			{
-//				output = output + stations[i] + "/n";
-//			}
-//		}
-//		
-//		return output;
-//	}
 	
 	public String toString()
 	{
+		//for some reason this doesn't always output correctly on zylabs
 		String output ="\nThey are:\n";
 		int currNumber = 0;
-		char charAt = 'L';
+		char charAt = 'L';// random value to have it not be null
 		int i = 0;
 		
 		while(currNumber < numberOfStations)

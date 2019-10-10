@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
-
+//problem in LetterAvgtoString
 public class MesoInherit extends MesoStation
 {
 	protected static String[] stations = {"BYOB", "BOIS", "ITSA", "MEEE"};

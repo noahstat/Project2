@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.Collections;
-
+//problem in LetterAvgtoString
 public class PosAvg extends MesoInherit
 {
 	
@@ -26,7 +26,14 @@ public class PosAvg extends MesoInherit
 	
 	public int indexOfStation()
 	{
-		return index - 8;
+		if(index < 8)
+		{
+			return index;
+		}
+		else
+		{
+			return index - 8;
+		}
 	}
 	
 	@Override
