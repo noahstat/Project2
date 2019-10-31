@@ -26,7 +26,7 @@ public class PosAvg extends MesoInherit
 	
 	public int indexOfStation()
 	{
-		if(index < 8)
+		if(index < 8)//was having a strange off by eight issue
 		{
 			return index;
 		}

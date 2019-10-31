@@ -8,7 +8,7 @@ public class LetterAvg extends MesoInherit
 	
 	public LetterAvg(char c) 
 	{
-		super("PLEA");
+		super("PLEA");//just setting this to whatever
 		this.key = c;
 	}
 
@@ -32,7 +32,7 @@ public class LetterAvg extends MesoInherit
 		for(int i = 0; i < 4; ++i)
 		{
 			c = stID.charAt(i);
-			sum += (int)c;
+			sum += (int)c;//casting gets the ascii value
 			
 		}
 		
@@ -89,6 +89,7 @@ public class LetterAvg extends MesoInherit
 		int numberOfStationWithLetterAvg = 0;
 		String toBeSearched = "";
 		
+		//find the stations with the same latter as the letter average
 		for(int i = 0; i < size; ++i)
 		{
 			toBeSearched = stations[i];
@@ -113,6 +114,7 @@ public class LetterAvg extends MesoInherit
 		int currNumber = 0;
 		char charAt = 'L';// random value to have it not be null
 		int i = 0;
+		int numberOfStations = numberOfStationWithLetterAvg();
 		
 		while(currNumber < numberOfStations)
 		{
@@ -121,7 +123,8 @@ public class LetterAvg extends MesoInherit
 			
 			if(charAt == key)
 				{
-					if(currNumber == numberOfStations - 1)
+				//dont mess up whitespace
+					if(currNumber == numberOfStations -1)
 					{
 						String toBeAdded = stations[i];
 						output = output + toBeAdded;

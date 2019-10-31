@@ -24,6 +24,12 @@ public class MesoInherit extends MesoStation
 	public MesoInherit(MesoStation mesoStation) 
 	{
 		super(mesoStation.getStID());
+		//try to read in so we have that data, there will be an array for every MesoInherit object
+				try {
+					MesoInherit.readIn();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 	}
 
 	protected static void readIn() throws IOException {
